@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lil/Customized/Background.dart';
-import 'package:lil/Screens/Chat.dart';
-import 'package:lil/Screens/Clubs.dart';
-import 'package:lil/Screens/Documents.dart';
-import 'package:lil/Screens/Questions.dart';
-
+import 'package:mainapp/Customized/Background.dart';
+import 'package:mainapp/Screens/Chat.dart';
+import 'package:mainapp/Screens/Clubs.dart';
+import 'package:mainapp/Screens/Documents.dart';
+import 'package:mainapp/Screens/Questions.dart';
 
 class HomePage extends StatefulWidget {
   @override

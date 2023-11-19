@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "989258309185",
+    "project_id": "liltech-7deb5",
+    "storage_bucket": "liltech-7deb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989258309185:android:19f5551089bdf8118430c0",
+        "android_client_info": {
+          "package_name": "com.example.mainapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "989258309185-5huecr1qbqrvebb07igrnep33e30ltvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwYRT7uhOI-f8G2p1UTYSun9khk34eSHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "989258309185-5huecr1qbqrvebb07igrnep33e30ltvm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

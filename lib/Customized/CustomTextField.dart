@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final String text;
-  String target;
-  CustomTextField({
-    required this.text,
-    required this.target,
-    Key? key,
-  }) : super(key: key);
+  CustomTextField({required this.text});
 
   bool obscuring() {
     bool a;
@@ -38,9 +33,6 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
         obscureText: obscuring(),
-        onSaved: (entred) {
-          target = entred!;
-        },
       ),
     );
   }

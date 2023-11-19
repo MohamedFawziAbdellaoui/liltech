@@ -1,10 +1,8 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:lil/Customized/Background.dart';
-import 'package:lil/Customized/CustomTextField.dart';
-import 'package:lil/Screens/HomePage.dart';
-import 'package:lil/Screens/SignUpScreen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:mainapp/Customized/Background.dart';
+import 'package:mainapp/Customized/CustomTextField.dart';
+import 'package:mainapp/Screens/HomePage.dart';
+import 'package:mainapp/Screens/SignUpScreen.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -13,8 +11,6 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  late String userEmail;
-  late String userPassword;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,14 +24,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: 220,
                   ),
                   CustomTextField(
-                    target: userEmail,
                     text: "Email",
                   ),
                   SizedBox(
                     height: 50,
                   ),
                   CustomTextField(
-                    target: userPassword,
                     text: "Password",
                   ),
                   Positioned(
@@ -53,19 +47,8 @@ class _SignInScreenState extends State<SignInScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 90.0),
                     child: ElevatedButton(
-                      onPressed: () async {
-                        try {
-                          UserCredential userCredential = await FirebaseAuth
-                              .instance
-                              .signInWithEmailAndPassword(
-                                  email: userEmail, password: userPassword);
-                        } on FirebaseAuthException catch (e) {
-                          if (e.code == 'user-not-found') {
-                            print('No user found for that email.');
-                          } else if (e.code == 'wrong-password') {
-                            print('Wrong password provided for that user.');
-                          }
-                        }
+                      onPressed: () {
+                        Navigator.pushNamed(context, HomePage.id);
                       },
                       child: Text(
                         "Login",
@@ -95,20 +78,8 @@ class _SignInScreenState extends State<SignInScreen> {
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                       GestureDetector(
-                        onTap: () async {
-                          try {
-                            UserCredential userCredential = await FirebaseAuth
-                                .instance
-                                .signInWithEmailAndPassword(
-                                    email: "barry.allen@example.com",
-                                    password: "SuperSecretPassword!");
-                          } on FirebaseAuthException catch (e) {
-                            if (e.code == 'user-not-found') {
-                              print('No user found for that email.');
-                            } else if (e.code == 'wrong-password') {
-                              print('Wrong password provided for that user.');
-                            }
-                          }
+                        onTap: () {
+                          Navigator.pushNamed(context, SignUpScreen.id);
                         },
                         child: Text(
                           "Sign Up",

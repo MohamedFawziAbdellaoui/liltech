@@ -1,9 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lil/Customized/Background.dart';
-import 'package:lil/Customized/CustomTextField.dart';
-import 'package:lil/Screens/HomePage.dart';
-import 'package:lil/Screens/SignInScreen.dart';
+import 'package:mainapp/Customized/Background.dart';
+import 'package:mainapp/Customized/CustomTextField.dart';
+import 'package:mainapp/Screens/SignInScreen.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -12,13 +10,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  late String userFirstName;
-  late String userLastName;
-  late String userNickName;
-  late String userEmail;
-  late String userPassword;
-  late String userConfirmedPassword;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,60 +20,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: ListView(
                 children: <Widget>[
                   SizedBox(height: 90),
-                  CustomTextField(
-                    text: "First name",
-                    target: userFirstName,
-                  ),
+                  CustomTextField(text: "First name"),
                   SizedBox(
                     height: 20,
                   ),
-                  CustomTextField(
-                    text: "Last name",
-                    target: userLastName,
-                  ),
+                  CustomTextField(text: "Last name"),
                   SizedBox(
                     height: 20,
                   ),
-                  CustomTextField(
-                    text: "Nick name",
-                    target: userNickName,
-                  ),
+                  CustomTextField(text: "Nick name"),
                   SizedBox(
                     height: 20,
                   ),
-                  CustomTextField(text: "Email", target: userEmail),
+                  CustomTextField(text: "Email"),
                   SizedBox(
                     height: 20,
                   ),
-                  CustomTextField(text: "Password", target: userPassword),
+                  CustomTextField(text: "Password"),
                   SizedBox(
                     height: 20,
                   ),
-                  CustomTextField(
-                      text: "Confirm Password", target: userConfirmedPassword),
+                  CustomTextField(text: "Confirm Password"),
                   SizedBox(
                     height: 20,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 90.0),
                     child: ElevatedButton(
-                      onPressed: () async {
-                        try {
-                          UserCredential userCredential = await FirebaseAuth
-                              .instance
-                              .createUserWithEmailAndPassword(
-                                  email: userEmail, password: userPassword);
-                        } on FirebaseAuthException catch (e) {
-                          if (e.code == 'weak-password') {
-                            print('The password provided is too weak.');
-                          } else if (e.code == 'email-already-in-use') {
-                            print('The account already exists for that email.');
-                          }
-                        } catch (e) {
-                          print(e);
-                        }
-                        Navigator.pushNamed(context, HomePage.id);
-                      },
+                      onPressed: () {},
                       child: Text(
                         "SignUp",
                         style: TextStyle(color: Colors.black, fontSize: 22),

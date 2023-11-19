@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lil/Customized/Background.dart';
+import 'package:mainapp/Customized/Background.dart';
 
 class Chat extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _ChatState extends State<Chat> {
       home: SafeArea(
         child: Scaffold(
           body: Background(
-            child:  Container(),
+            child:  
           ),
         ), 
       ),
